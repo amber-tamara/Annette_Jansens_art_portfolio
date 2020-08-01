@@ -1,0 +1,31 @@
+.background {
+    background-color: #ffa8e6;
+}
+
+.wrapper {margin: 0 100px;
+    padding-bottom: 110px;
+}
+
+.title {
+    text-align: center;
+    align-content: center;
+    padding: 50px;
+}
+
+.picture {
+    margin: 0;
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+}
+
+.text {
+    max-width: 500px;
+}
+
+.content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+}
