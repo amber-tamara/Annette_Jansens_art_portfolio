@@ -8,13 +8,8 @@ const About = () => {
     file(relativePath: {eq: "women.jpg"}) {
       id
       childImageSharp {
-        fluid(grayscale: false, maxHeight: 300) {
-          base64
-          tracedSVG
-          srcWebp
-          srcSetWebp
-          originalImg
-          originalName
+        fluid(maxWidth: 2000) {
+       ...GatsbyImageSharpFluid
         }
       }
     }
@@ -22,28 +17,31 @@ const About = () => {
   
       `)
   return (
-    <div className={Bio.background}>
-      <div className={Bio.wrapper}>
-        <h1 className={Bio.title}>About me</h1>
-        <div className={Bio.content}>
-          <Img fluid={data.file.childImageSharp.fluid} className={Bio.picture}></Img>
-          <p className={Bio.text}>Lotta Nieminen Studio is a graphic design, art direction
-          and illustration studio creating holistic visual solutions
-          for clients across disciplines. Passionate about finding the
-          best tools to execute content-driven visuals, the studio works
-          as a creative partner in all aspects branding, bringing visual
-          identities to life through thoughtfully crafted print and digital
-          implementations. Originally from Finland, Lotta Nieminen studied
-          graphic design and illustration at the University of Art and Design
-          Helsinki and the Rhode Island School of Design, before founding her
-          New York-based studio in 2012. She has been nominated for Forbes
-          magazine’s annual 30 Under 30 list, the Art Directors Club Young
-          Guns award and Print magazine’s New Visual Artist, and has given
-          talks at conferences and educational institutions across the United
+    <div className={Bio.background} id="about">
+      <div className={Bio.clip}>
+        <div className={Bio.wrapper}>
+          <h1 className={Bio.title}>About me</h1>
+          <div className={Bio.content}>
+            <Img fluid={data.file.childImageSharp.fluid} fadeIn className={Bio.picture}></Img>
+
+            <p className={Bio.text}>Lotta Nieminen Studio is a graphic design, art direction
+            and illustration studio creating holistic visual solutions
+            for clients across disciplines. Passionate about finding the
+            best tools to execute content-driven visuals, the studio works
+            as a creative partner in all aspects branding, bringing visual
+            identities to life through thoughtfully crafted print and digital
+            implementations. Originally from Finland, Lotta Nieminen studied
+            graphic design and illustration at the University of Art and Design
+            Helsinki and the Rhode Island School of Design, before founding her
+            New York-based studio in 2012. She has been nominated for Forbes
+            magazine’s annual 30 Under 30 list, the Art Directors Club Young
+            Guns award and Print magazine’s New Visual Artist, and has given
+            talks at conferences and educational institutions across the United
                 States and Europe.</p>
-        </div>
+          </div>
+        </div >
       </div >
-    </div >
+    </div>
   )
 }
 

@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-anchor-links`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -47,7 +48,7 @@ module.exports = {
           include: /assets/
         },
       },
-    }
+    },
   ],
 
 }

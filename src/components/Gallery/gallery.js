@@ -6,40 +6,34 @@ import Img from "gatsby-image"
 const Gallery = () => {
   const data = useStaticQuery(graphql`
    {
-    allFile(filter: {sourceInstanceName: {eq: "paintings"}}) {
-        edges {
-          node {
-            id
-            childImageSharp {
-              id
-              fluid(traceSVG: {blackOnWhite: false}, sizes: "") {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                originalImg
-                originalName
-                sizes
-                src
-                srcSet
-                presentationWidth
-                presentationWidth
-              }
+    allFile(filter: {sourceInstanceName: {eq: "paintings"}, root: {}}, sort: {order: ASC, fields: name}) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            fluid(traceSVG: {blackOnWhite: false}) {
+              base64
+              tracedSVG
+              srcWebp
+              srcSetWebp
+              originalImg
+              originalName
             }
           }
         }
       }
     }
+  }
   `)
 
   // console.log(data)
   return (
     <div className="background">
-      <h1 className="title">GALLERY</h1>
+      {/* <h1 className="title">GALLERY</h1> */}
       <div className="imageGallery">
         {data.allFile.edges.map((image, i) => (
 
-          <Img
+          < Img
             className={"image image-" + i}
             key={image.node.id}
             fluid={image.node.childImageSharp.fluid}

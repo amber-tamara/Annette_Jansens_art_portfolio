@@ -55,9 +55,8 @@ const Header = ({ siteTitle }) => {
         className={header.wrapper}
       >
         <li className={header.nav}>
-          <ul>GALLERY</ul>
-          <ul>ABOUT</ul>
-          <ul>CONTACT</ul>
+          <a href="#about"><ul>ABOUT</ul></a>
+          <a href="#form"><ul>CONTACT</ul></a>
         </li>
         <h1 className={header.title}>
           {siteTitle}
@@ -73,7 +72,7 @@ const Header = ({ siteTitle }) => {
           <RightNav open={open} />
         </StyledBurger>
       </div>
-    </header>
+    </header >
   )
 }
 

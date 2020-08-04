@@ -1,22 +1,28 @@
 .background {
-    background-color: #ffa8e6;
+    background-color: #F9F9F4;
 }
 
-.wrapper {margin: 0 100px;
+.clip {
+    background-color: #cacaca;
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+
+.wrapper {padding: 0 10px;
     padding-bottom: 110px;
 }
 
 .title {
     text-align: center;
     align-content: center;
-    padding: 50px;
+    padding-top: 130px;
 }
 
 .picture {
-    margin: 0;
-    width: 400px;
-    height: 400px;
-    background-color: blue;
+display: inline-flex;
+height: 400px;
+width: 400px;
+margin-bottom: 20px;
 }
 
 .text {
@@ -25,7 +31,7 @@
 
 .content {
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     display: flex;
     width: 100%;
 }

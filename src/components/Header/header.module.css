@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
 * {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
+
+/* .header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+} */
 
 .wrapper { 
     padding: 20px;
@@ -9,7 +19,7 @@
     /* padding-top: 2.5vw;
     padding-bottom: 2.5vw;
     padding-right: 3vw; */
-    background-color: whitesmoke;
+    background-color: #a7a6a6;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 }
@@ -47,6 +57,13 @@ grid-template-columns: 1fr 1fr 1fr;
     left: 0;
   }
 
+  .nav > a {
+      text-decoration: none;
+      color: black;
+      margin-right: 20px;
+      margin-top: 15px;
+  }
+
   .navbar{
       height: 50px;
       width: 100%;
@@ -57,6 +74,7 @@ grid-template-columns: 1fr 1fr 1fr;
     display: flex;
     justify-content: flex-end;
     margin: 0 70px;
+    margin-top: 2px;
   }
 
   .svg {

@@ -12,9 +12,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header/header"
 import "./layout.css"
 import About from "../components/About/about"
-import Paintings from "../components/paintings/paintings"
+import Carousel from "../components/Carousel/carousel"
 import Gallery from "../components/Gallery/gallery"
 import Form from "../components/Form/form"
+import Footer from "../components/Footer/footer"
 // import Burger from '../components/Burger/burger'
 
 const Layout = ({ children }) => {
@@ -33,8 +34,9 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <Gallery />
       <About></About>
-      <Paintings></Paintings>
+      <Carousel />
       <Form />
+      <Footer />
       <main>{children}</main>
       <footer>
 
