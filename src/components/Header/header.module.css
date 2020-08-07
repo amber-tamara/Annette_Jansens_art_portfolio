@@ -25,7 +25,8 @@ grid-template-columns: 1fr 1fr 1fr;
 }
 
 .title {
-    color: black;
+    z-index: 1;
+    color: white;
     font-size: calc(5px + 3vw);
     font-weight: 500;
     text-align: center;
@@ -45,6 +46,19 @@ grid-template-columns: 1fr 1fr 1fr;
     margin-top: 12px;
     font-size: 15px;
     padding: 0px;
+}
+
+a {
+    font-weight: bold;
+}
+.nav > a,
+a:after,
+a:before {
+  transition: all .5s;
+}
+.nav > a:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .mainOverlay {
@@ -85,8 +99,35 @@ grid-template-columns: 1fr 1fr 1fr;
       width: 20px;
   }
 
+  @media (min-width: 481px) and (max-width: 1025px) {
+      .title {
+          margin-left: 10%;
+      }
+    .wrapper{
+        display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+    }
+    .nav {
+        display: none;
+      }
+  
+      .svg {
+          display: none;
+      }
+      .brushImg {
+          width: 35%;
+          height: 85px;
+          position: absolute;
+          top: 10%;
+          left: 1%;
+      }
+  }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    .wrapper{
+        display: grid;
+grid-template-columns: 1fr 1fr;
+    }
     .nav {
       display: none;
     }
@@ -94,4 +135,26 @@ grid-template-columns: 1fr 1fr 1fr;
     .svg {
         display: none;
     }
+    .brushImg {
+        width: 50%;
+        height: 50px;
+        position: absolute;
+        top: 20%;
+        left: 1%;
+    }
 }
+@media (min-width: 1030px) {
+.brushImg {
+    width: 400px;
+    height: 100px;
+    position: absolute;
+    top: 10%;
+    left: 33%;
+}
+}
+/* 
+width: 400px;
+height: 100px;
+position: absolute;
+top: 10%;
+left: 33%; */

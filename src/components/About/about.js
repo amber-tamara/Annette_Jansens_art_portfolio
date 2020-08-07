@@ -2,6 +2,9 @@ import React from "react"
 import Bio from '../About/about.module.css'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Aos from "aos";
+import "aos/dist/aos.css"
+import { useEffect } from "react"
 
 const About = () => {
   const data = useStaticQuery(graphql`{
@@ -16,14 +19,16 @@ const About = () => {
   }
   
       `)
+  useEffect(() => {
+    Aos.init({ duration: 2000 })
+  }, [])
   return (
     <div className={Bio.background} id="about">
       <div className={Bio.clip}>
         <div className={Bio.wrapper}>
           <h1 className={Bio.title}>About me</h1>
           <div className={Bio.content}>
-            <Img fluid={data.file.childImageSharp.fluid} fadeIn className={Bio.picture}></Img>
-
+            <Img data-aos="fade-right" fluid={data.file.childImageSharp.fluid} fadeIn className={Bio.picture}></Img>
             <p className={Bio.text}>Lotta Nieminen Studio is a graphic design, art direction
             and illustration studio creating holistic visual solutions
             for clients across disciplines. Passionate about finding the
@@ -41,8 +46,7 @@ const About = () => {
           </div>
         </div >
       </div >
-    </div>
-  )
+    </div>)
 }
 
 export default About

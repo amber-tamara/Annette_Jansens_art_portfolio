@@ -1,0 +1,84 @@
+.formSvg {
+    width: 300px;
+    height: 300px;
+}
+
+#arm {
+    animation: arm 1s infinite linear alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes arm {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-5deg)
+    }
+}
+
+#first-color {
+    animation: one 1s infinite linear alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+    fill: "url(#paint0_linear)";
+}
+
+@keyframes one {
+    from {
+        opacity: 0.5;
+        transform: rotate(0deg);
+        fill: blue;
+    }
+    to {
+        transform: rotate(-10deg);
+        fill: red;
+    }
+}
+#second-color {
+    /* animation: one 1s infinite linear alternate; */
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes one {
+    from {
+        opacity: 0.5;
+        transform: rotate(0deg);
+        fill: blue;
+    }
+    to {
+        transform: rotate(2deg);
+        fill: red;
+    }
+}
+
+/* #painting {
+    animation: shake 2.5s infinite alternate linear both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+} }
+  #person {
+    animation: person 2.5s infinite linear alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes person {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: translate(80px,0);
+    }
+} */

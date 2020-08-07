@@ -6,6 +6,7 @@ import Icon from "../../assets/facebook.svg"
 import SecondIcon from "../../assets/instagram.svg"
 import styled from 'styled-components'
 import RightNav from '../Burger/rightnav'
+import paint from "../../images/splat.png"
 
 const StyledBurger = styled.div`
 width: 2rem;
@@ -58,7 +59,7 @@ const Header = ({ siteTitle }) => {
           <a href="#about"><ul>ABOUT</ul></a>
           <a href="#form"><ul>CONTACT</ul></a>
         </li>
-        <h1 className={header.title}>
+        <img className={header.brushImg} src={paint} alt="paint"></img><h1 className={header.title}>
           {siteTitle}
         </h1>
         <div className={header.svgWrapper}>
