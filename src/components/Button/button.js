@@ -16,7 +16,7 @@ const Button = () => {
     };
 
     return (
-        <div>
+        <div className="button-wrapper">
             <button
                 className={`glow-on-hover ${animate ? "testt" : ""}`}
                 onClick={!setAnimate}>

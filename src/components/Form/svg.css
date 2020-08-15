@@ -3,6 +3,21 @@
     height: 300px;
 }
 
+@media (max-width: 438px) {
+    .formSvg {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 689px) {
+    /* .formSvg {
+        width: 350px;
+        height: 350px;
+        padding: 20px;
+    } */
+}
+
 #arm {
     animation: arm 1s infinite linear alternate;
     transform-origin: center;

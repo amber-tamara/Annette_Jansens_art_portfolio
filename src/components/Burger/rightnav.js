@@ -7,20 +7,21 @@ import SecondIcon from "../../assets/instagram.svg"
 const Ul = styled.ul` 
  list-style: none;
  display: flex;
- flex-flow: row nowrap
+ flex-flow: row nowrap;
+ align-items: center;
 
  li {
    padding: 18px 10px;
  }
 
-@media (max-width: 768px) {
+@media (max-width: 1025px) {
   flex-flow: column nowrap;
   background-color: #a7a6a6;
   position: fixed;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 60vh;
   width: 300px;
   padding-top: 3.5rem;
   transition: transform 0.3s ease-in-out;
@@ -28,7 +29,7 @@ const Ul = styled.ul`
   li {
       color: #fff;
       font-weight: bold;
-      margin-top: 10px;
+      text-align: center;
   }
   a{
     font-weight: bold;

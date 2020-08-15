@@ -7,22 +7,24 @@
     clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
 }
 
-
-.wrapper {padding: 0 10px;
-    padding-bottom: 110px;
+.wrapper {
+    padding-bottom: 140px;
+    margin: auto;
+    width: 85%;
 }
 
 .title {
     text-align: center;
     align-content: center;
     padding-top: 130px;
+    padding-bottom: 50px;
 }
 
 .picture {
 display: inline-flex;
 height: 400px;
 width: 400px;
-margin-bottom: 20px;
+margin-bottom: 70px;
 }
 
 .text {

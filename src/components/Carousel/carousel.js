@@ -4,30 +4,21 @@ import { Carousel } from 'react-bootstrap';
 // import { useStaticQuery, graphql } from "gatsby"
 import { useState } from 'react';
 import image from "../Carousel/carousel.module.css"
-import Img from "gatsby-image"
+import Img from "gatsby-image/withIEPolyfill"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Paintings = function ControlledCarousel() {
     const data = useStaticQuery(graphql`
    {
-    allFile(filter: {sourceInstanceName: {eq: "paintings"}}) {
+    allFile(filter: {relativeDirectory: {eq: "carousel"}}) {
         edges {
           node {
             id
             childImageSharp {
-              id
-              fluid(traceSVG: {blackOnWhite: false}, sizes: "") {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                originalImg
-                originalName
-                sizes
+              original {
+                width
+                height
                 src
-                srcSet
-                presentationWidth
-                presentationWidth
               }
             }
           }
@@ -47,10 +38,10 @@ const Paintings = function ControlledCarousel() {
             <h3 className={image.title}>ART I'M CURRENTLY WORKING ON</h3>
             <div className={image.content}>
                 <Carousel className={image.wrapper} activeIndex={index} onSelect={handleSelect}>
-                    <Carousel.Item>
+                    <Carousel.Item className={image.item}>
                         <Img
                             className={image.image}
-                            fluid={data.allFile.edges[0].node.childImageSharp.fluid}
+                            fluid={data.allFile.edges[0].node.childImageSharp.original}
                             alt="First slide"
                         />
                         <Carousel.Caption>
@@ -61,7 +52,7 @@ const Paintings = function ControlledCarousel() {
                     <Carousel.Item>
                         <Img
                             className={image.image}
-                            fluid={data.allFile.edges[6].node.childImageSharp.fluid}
+                            fluid={data.allFile.edges[1].node.childImageSharp.original}
                             alt="First slide"
                         />
                         <Carousel.Caption>
@@ -72,7 +63,7 @@ const Paintings = function ControlledCarousel() {
                     <Carousel.Item>
                         <Img
                             className={image.image}
-                            fluid={data.allFile.edges[2].node.childImageSharp.fluid}
+                            fluid={data.allFile.edges[2].node.childImageSharp.original}
                             alt="First slide"
                         />
                         <Carousel.Caption>

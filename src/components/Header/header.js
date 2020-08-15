@@ -6,7 +6,7 @@ import Icon from "../../assets/facebook.svg"
 import SecondIcon from "../../assets/instagram.svg"
 import styled from 'styled-components'
 import RightNav from '../Burger/rightnav'
-import paint from "../../images/splat.png"
+import Splat from "../../assets/splat.svg"
 
 const StyledBurger = styled.div`
 width: 2rem;
@@ -20,7 +20,7 @@ flex-flow: column nowrap;
 z-index: 10;
 display: none;
 
-@media (max-width: 768px) {
+@media (max-width: 1025px) {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
@@ -56,15 +56,15 @@ const Header = ({ siteTitle }) => {
         className={header.wrapper}
       >
         <li className={header.nav}>
-          <a href="#about"><ul>ABOUT</ul></a>
-          <a href="#form"><ul>CONTACT</ul></a>
+          <ul><a className={header.navLink} href="#about">ABOUT</a></ul>
+          <ul className={header.navList}><a className={header.navLink} href="#form">CONTACT</a></ul>
         </li>
-        <img className={header.brushImg} src={paint} alt="paint"></img><h1 className={header.title}>
-          {siteTitle}
-        </h1>
+        <Splat className={header.brushImg} alt="paint"></Splat>
+        <h1 className={header.title}>
+          {siteTitle}</h1>
         <div className={header.svgWrapper}>
-          <Icon className={header.svg} />
-          <SecondIcon className={header.svg} />
+          <a className={header.navLink}><Icon className={header.svg} /> </a>
+          <a className={header.navLink}><SecondIcon className={header.secondSvg} /></a>
         </div>
         <StyledBurger open={open} onClick={() => setOpen(!open)}>
           <div></div>
