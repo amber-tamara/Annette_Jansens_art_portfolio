@@ -2,7 +2,7 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: `Annettes Art`,
+    title: `Annette's Art`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -11,6 +11,15 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-recaptcha`,
+    {
+      resolve: `gatsby-plugin-recaptcha`,
+      options: {
+        async: false,
+        defer: false,
+        args: `?onload=onloadCallback&render=explicit`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

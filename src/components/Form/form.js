@@ -1,40 +1,106 @@
 import React from "react"
 import "../Form/form.scss"
 import FormSvg from "../Form/animation"
-import Button from "../Button/button.js"
+// import Button from "../Button/button.js"
+import "../Button/button.scss"
+import { useState } from 'react';
+// import Recaptcha from "react-recaptcha";
+import axios from "axios"
 
 const Form = () => {
+    const [serverState, setServerState] = useState({
+        submitting: false,
+        status: null,
+    })
+    const handleServerResponse = (ok, msg, form) => {
+        setServerState({
+            submitting: false,
+            status: { ok, msg },
+        })
+        if (ok) {
+            form.reset()
+        }
+    }
+    const handleOnSubmit = e => {
+        e.preventDefault()
+        const form = e.target
+        setServerState({ submitting: true })
+        axios({
+            method: "post",
+            url: "https://getform.io/f/644f0023-19dc-46ae-8e1b-73abf25484fe",
+            data: new FormData(form),
+        })
+            .then(r => {
+                handleServerResponse(true, "Thanks!", form)
+            })
+            .catch(r => {
+                handleServerResponse(false, r.response.data.error, form)
+            })
+    }
     return (
-        <div className="backgroundForm" id="form">
-            <div className="form-box">
-                <div className="title">
-                    <h1>CONTACT ME</h1>
-                    <p>Interested in a painting or Want to collab?
-                    Drop me a message
-            </p>
+        <div>
+            <div >
+                <div>
                 </div>
-                <div className="form-wrapper">
-                    <form className="form">
-                        <div className="box">
-                            <label>NAME</label>
-                            <input className="text" type="text" name="name"></input>
+                <h2 >GET IN TOUCH!</h2>
+                <p >
+                    Whether you have an idea for a project or just want to chat, feel free
+              to shoot me an email!{" "}
+                </p>{" "}
+                <div >
+                    <form onSubmit={handleOnSubmit}>
+                        <div>
+                            <h2>Contact Form</h2>
+                            <label
+
+                                for="exampleInputEmail1"
+                                required="required"
+                            >
+                                Name*
+                  </label>
+                            <input
+
+                                type="text"
+                                name="name"
+                                id="exampleInputEmail1"
+                                aria-describedby="emailHelp"
+                            />
                         </div>
-                        <div className="box">
-                            <label>EMAIL</label>
-                            <input className="text" type="email"></input>
+                        <div className="form-group">
+                            <label for="exampleInputName">
+                                Email*
+                  </label>
+                            <input
+
+                                type="email"
+                                name="email"
+                                id="exampleInputName"
+                                required="required"
+                            />
                         </div>
-                        <div className="box">
-                            <label>MESSAGE</label>
+                        <div >
+                            <label>Message*</label>
                             <textarea
-                                className="text"
+
                                 name="message"
-                                cols="18"
-                                rows="4"
-                                required></textarea>
+                                cols="29"
+                                rows="5"
+                                required
+                            ></textarea>
                         </div>
-                        <Button></Button>
+                        <button
+                            type="submit"
+                            className="btn btn-primary"
+                            disabled={serverState.submitting}
+                        >
+                            Submit
+                </button>
+                        {serverState.status && (
+                            <p className={!serverState.status.ok ? "errorMsg" : ""}>
+                                {serverState.status.msg}
+                            </p>
+                        )}
                     </form>
-                    <FormSvg></FormSvg>
                 </div>
             </div>
         </div>

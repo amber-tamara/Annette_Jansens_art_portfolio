@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import Aos from "aos";
 import "aos/dist/aos.css"
 import { useEffect } from "react"
-import pic from "../../images/paintings/b.jpg"
 
 const Gallery = () => {
   useEffect(() => {
