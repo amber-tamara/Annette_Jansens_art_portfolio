@@ -1,6 +1,6 @@
 .backgroundForm {
     background-color: #cacaca;
-    height: 750px;
+    height: 800px;
 }
 
 .form-box {
@@ -8,11 +8,19 @@
   width: 100%;
 }
 
-@media (max-width: 585px) { 
-  .backgroundForm { height: 1000px;
+.form-wrapper {
+display: flex;
+flex-wrap: wrap;
+}
+
+.recaptcha {
+  margin-bottom: 21px;
+}
+
+@media (max-width: 770px) { 
+  .backgroundForm { height: 1300px;
   } 
   .form {
-    padding-bottom: 85px;
     margin-left: 30px;
   }
 }
@@ -23,7 +31,31 @@
   flex-wrap: wrap;
 }
 
+.dissapear {
+  display: none;
+}
+
+.appear {
+  opacity: 0.4;
+  display: block;
+  width: 500px;
+  height: 500px;
+}
+
+.messageBox{
+  position: relative;
+}
+
+.message {
+  position: absolute;
+top: 50%;
+left: 25%;
+transform: translate;
+transform: translate(-50%, -50%);
+}
+
 .form {
+    margin-left: 20px;
     margin-right: 30px;
     max-width: 300px;
     display: flex;

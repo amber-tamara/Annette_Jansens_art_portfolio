@@ -1,17 +1,40 @@
 import React from "react"
 import "../Form/form.scss"
-import FormSvg from "../Form/animation"
+// import FormSvg from "../Form/animation"
 // import Button from "../Button/button.js"
 import "../Button/button.scss"
 import { useState } from 'react';
-// import Recaptcha from "react-recaptcha";
-import axios from "axios"
+import Recaptcha from "react-recaptcha";
+import axios from "axios";
+// import Img from "gatsby-image"
+import FormSvg from "./animation";
 
 const Form = () => {
+    const [animate, setAnimate] = useState(false);
+    const [none, setNone] = useState(false);
+    const [toggled, setToggled] = useState(false);
+    const [click, setClick] = useState(false)
     const [serverState, setServerState] = useState({
         submitting: false,
         status: null,
     })
+
+
+    function handlSubcribe() {
+        if (click === true) {
+            console.log("you have done it!")
+        }
+        else {
+            console.log("please baby")
+        }
+    }
+
+    const clickHandler = function (e) {
+        // e.preventDefault()
+        setAnimate(true)
+        handlSubcribe()
+    };
+
     const handleServerResponse = (ok, msg, form) => {
         setServerState({
             submitting: false,
@@ -31,77 +54,113 @@ const Form = () => {
             data: new FormData(form),
         })
             .then(r => {
-                handleServerResponse(true, "Thanks!", form)
+                if (click === true) {
+                    handleServerResponse(true, "Thanks!", form)
+                    console.log("grr")
+                    setClick(false)
+                    setNone(true)
+                    setToggled(true)
+                }
+            })
+            .then(r => {
+                if (click === false) {
+                    handleServerResponse(false, "No", form)
+                }
             })
             .catch(r => {
-                handleServerResponse(false, r.response.data.error, form)
+                if (click === false) {
+                    handleServerResponse(false, "Please click reCaptcha", form)
+                    console.log(r)
+                }
             })
     }
+
+    // r.response.data.error
+
+    function recaptchaLoaded() {
+        console.log("loaded")
+    }
+
+    function verifyCallback(response) {
+        if (response) {
+            setClick(true)
+            console.log("bob")
+        }
+    }
+
     return (
-        <div>
-            <div >
-                <div>
+        <div className="backgroundForm" id="form">
+            <div className="form-box">
+                <div className="title">
+                    <h1>CONTACT ME</h1>
+                    <p>Interested in a painting or want to collab?
+                    Drop me a message
+                    </p>
                 </div>
-                <h2 >GET IN TOUCH!</h2>
-                <p >
-                    Whether you have an idea for a project or just want to chat, feel free
-              to shoot me an email!{" "}
-                </p>{" "}
-                <div >
-                    <form onSubmit={handleOnSubmit}>
-                        <div>
-                            <h2>Contact Form</h2>
-                            <label
-
-                                for="exampleInputEmail1"
-                                required="required"
-                            >
-                                Name*
-                  </label>
+                <div className={`form-wrapper ${none ? "dissapear" : ""}`}>
+                    <form className="form" onSubmit={handleOnSubmit}>
+                        <div className="box">
+                            <label for="exampleInputEmail1"
+                                required="required">
+                                Name</label>
                             <input
-
+                                className="text"
                                 type="text"
                                 name="name"
                                 id="exampleInputEmail1"
                                 aria-describedby="emailHelp"
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="box">
                             <label for="exampleInputName">
-                                Email*
-                  </label>
+                                Email</label>
                             <input
-
+                                className="text"
                                 type="email"
                                 name="email"
                                 id="exampleInputName"
                                 required="required"
                             />
                         </div>
-                        <div >
-                            <label>Message*</label>
+                        <div className="box">
+                            <label for="exampleInputMessage">Message</label>
                             <textarea
-
+                                className="text"
                                 name="message"
                                 cols="29"
                                 rows="5"
                                 required
                             ></textarea>
                         </div>
+                        <div className="recaptcha">
+                            <Recaptcha
+                                sitekey="6LdBo78ZAAAAAAzjitoDMESb856n3M_KvXqyKmfE"
+                                render="explicit"
+                                onloadCallback={recaptchaLoaded}
+                                verifyCallback={verifyCallback}
+                            />
+                        </div>
                         <button
                             type="submit"
-                            className="btn btn-primary"
+                            className={`glow-on-hover butto ${animate ? "testt" : ""}`}
+                            onClick={clickHandler}
                             disabled={serverState.submitting}
                         >
                             Submit
-                </button>
+                  </button>
+                    </form>
+                </div>
+                <div className="messageBox">
+                    <div className="message">
                         {serverState.status && (
                             <p className={!serverState.status.ok ? "errorMsg" : ""}>
                                 {serverState.status.msg}
                             </p>
                         )}
-                    </form>
+                    </div>
+                    <img src={require("../../images/splat.jpg")} alt="Cat" className={` ${toggled ? "appear" : "dissapear"}`} />
                 </div>
+                <FormSvg></FormSvg>
             </div>
         </div>
     )

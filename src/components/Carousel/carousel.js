@@ -1,7 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Carousel } from 'react-bootstrap';
-// import { useStaticQuery, graphql } from "gatsby"
 import { useState } from 'react';
 import image from "../Carousel/carousel.module.css"
 import Img from "gatsby-image/withIEPolyfill"

@@ -85,6 +85,7 @@ var clickHandler = function (e) {
     //reset animation
     // setAnimate(false)
     setAnimate(true)
+    setClick(true)
     handlSubcribe()
 };
 
@@ -125,9 +126,9 @@ return (
         <div className="form-box">
             <div className="title">
                 <h1>CONTACT ME</h1>
-                <p>Interested in a painting or Want to collab?
+                <p>Interested in a painting or want to collab?
                 Drop me a message
-        </p>
+           </p>
             </div>
             <div className="form-wrapper">
                 <form className="form" onSubmit={handleOnSubmit}>
