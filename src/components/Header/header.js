@@ -6,7 +6,7 @@ import Icon from "../../assets/facebook.svg"
 import SecondIcon from "../../assets/instagram.svg"
 import styled from 'styled-components'
 import RightNav from '../Burger/rightnav'
-// import Splat from "../../assets/splat.svg"
+import Splat from "../../assets/splat.svg"
 
 const StyledBurger = styled.div`
 width: 2rem;
@@ -52,28 +52,28 @@ const Header = ({ siteTitle }) => {
   const [open, setOpen] = useState(false)
   return (
     <header className={header.header}>
-      <div
-        className={header.wrapper}
-      >
+      {/* <div className={header.svgWrapper}>
+        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc"><Icon className={header.svg} /> </a>
+        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc"><SecondIcon className={header.secondSvg} /></a>
+      </div> */}
+      <div className={header.wrapper}>
+        <div className={header.title}></div>
         <li className={header.nav}>
+          <ul><a className={header.navLink}>GALLERY</a></ul>
+          <ul><a className={header.navLink}>ABOUT</a></ul>
+          <ul><a className={header.navLink}>CONTACT</a></ul>
+          {/* <ul><a className={header.navLink}>GALLERY</a></ul>
           <ul><a className={header.navLink} href="#about">ABOUT</a></ul>
-          <ul className={header.navList}><a className={header.navLink} href="#form">CONTACT</a></ul>
+          <ul className={header.navList}><a className={header.navLink} href="#form">CONTACT</a></ul> */}
         </li>
-        {/* <Splat className={header.brushImg} alt="paint"></Splat> */}
-        <h1 className={header.title}>
-          {siteTitle}</h1>
         <StyledBurger open={open} onClick={() => setOpen(!open)}>
           <div></div>
           <div></div>
           <div></div>
           <RightNav open={open} />
         </StyledBurger>
-        <div className={header.svgWrapper}>
-          <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc"><Icon className={header.svg} /> </a>
-          <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc"><SecondIcon className={header.secondSvg} /></a>
-        </div>
       </div>
-    </header >
+    </header>
   )
 }
 

@@ -44,6 +44,7 @@ const Form = () => {
             form.reset()
         }
     }
+
     const handleOnSubmit = e => {
         e.preventDefault()
         const form = e.target
@@ -56,7 +57,6 @@ const Form = () => {
             .then(r => {
                 if (click === true) {
                     handleServerResponse(true, "Thanks!", form)
-                    console.log("grr")
                     setClick(false)
                     setNone(true)
                     setToggled(true)
@@ -84,7 +84,7 @@ const Form = () => {
     function verifyCallback(response) {
         if (response) {
             setClick(true)
-            console.log("bob")
+            console.log(click)
         }
     }
 
@@ -149,6 +149,7 @@ const Form = () => {
                             Submit
                   </button>
                     </form>
+                    <FormSvg></FormSvg>
                 </div>
                 <div className="messageBox">
                     <div className="message">
@@ -160,7 +161,6 @@ const Form = () => {
                     </div>
                     <img src={require("../../images/splat.jpg")} alt="Cat" className={` ${toggled ? "appear" : "dissapear"}`} />
                 </div>
-                <FormSvg></FormSvg>
             </div>
         </div>
     )

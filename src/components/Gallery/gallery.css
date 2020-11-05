@@ -7,12 +7,13 @@
 }
 
 .background {
-    background-color: #F9F9F4;
+    background-color: #fefefe;
     padding-bottom: 100px;
 }
 
 .imageGallery {
-    width: 85%;
+    max-width: 1040px;
+    /* width: 85%; */
     margin: auto;
     padding-top: 50px; 
     /* max-width: 90vw;
