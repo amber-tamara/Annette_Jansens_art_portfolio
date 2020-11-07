@@ -1,12 +1,12 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { useState } from 'react';
-import header from "./header.module.css"
-import Icon from "../../assets/facebook.svg"
-import SecondIcon from "../../assets/instagram.svg"
+import header from "./header.module.scss"
+// import Icon from "../../assets/facebook.svg"
+// import SecondIcon from "../../assets/instagram.svg"
 import styled from 'styled-components'
 import RightNav from '../Burger/rightnav'
-import Splat from "../../assets/splat.svg"
+// import Splat from "../../assets/splat.svg"
 
 const StyledBurger = styled.div`
 width: 2rem;
@@ -59,9 +59,9 @@ const Header = ({ siteTitle }) => {
       <div className={header.wrapper}>
         <div className={header.title}></div>
         <li className={header.nav}>
-          <ul><a className={header.navLink}>GALLERY</a></ul>
-          <ul><a className={header.navLink}>ABOUT</a></ul>
-          <ul><a className={header.navLink}>CONTACT</a></ul>
+          <ul><a href="#gallery" className={`${header.navLink} ${header.orange}`}>GALLERY</a></ul>
+          <ul><a href="#about" className={`${header.navLink} ${header.pink}`}>ABOUT</a></ul>
+          <ul><a href="#form" className={`${header.navLink} ${header.blue}`}>CONTACT</a></ul>
           {/* <ul><a className={header.navLink}>GALLERY</a></ul>
           <ul><a className={header.navLink} href="#about">ABOUT</a></ul>
           <ul className={header.navList}><a className={header.navLink} href="#form">CONTACT</a></ul> */}

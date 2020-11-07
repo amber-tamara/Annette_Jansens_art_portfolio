@@ -8,6 +8,7 @@ import Recaptcha from "react-recaptcha";
 import axios from "axios";
 // import Img from "gatsby-image"
 import FormSvg from "./animation";
+import painting from "../../images/paintings/d.jpg"
 
 const Form = () => {
     const [animate, setAnimate] = useState(false);
@@ -149,7 +150,8 @@ const Form = () => {
                             Submit
                   </button>
                     </form>
-                    <FormSvg></FormSvg>
+                    {/* <FormSvg></FormSvg> */}
+                    <img src={painting} className="tropicalPainting"></img>
                 </div>
                 <div className="messageBox">
                     <div className="message">

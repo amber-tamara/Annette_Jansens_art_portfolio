@@ -1,3 +1,7 @@
+*{
+    scroll-behavior: smooth;
+}
+
 /*================
 wrapper of content
 ==================*/
@@ -9,90 +13,17 @@ wrapper of content
     max-width: 1040px;
     margin: 0 auto;
 }
-/* 
-.wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    max-width: 604px;
-    margin: auto auto;
-    box-shadow:
-    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-    0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12)
-  ;
-} */
 
 /*================
-zebra painting
+background styles
 ==================*/
-
-.zebraPainting {
-    z-index: -2;
-    height:400px;
-    position: absolute;
-    top:0;
-    right: 0;
-}
-
-.zebraPaintingGif {
-    position: absolute;
-    height:400px;
-    width: ;
-    right: 3px;
-}
-
-.dissapear{
-    display: none;
-}
-
-/*================
-div containing paragraph
-==================*/
-
-.draw {
-    width: 400px;
-    height: 400px;
-    /* background-image: radial-gradient(circle at center center, transparent,rgb(202,202,202)),linear-gradient(478deg, rgba(90, 90, 90,0.05) 0%, rgba(90, 90, 90,0.05) 50%,rgba(206, 206, 206,0.05) 50%, rgba(206, 206, 206,0.05) 100%),linear-gradient(208deg, rgba(13, 13, 13,0.05) 0%, rgba(13, 13, 13,0.05) 50%,rgba(189, 189, 189,0.05) 50%, rgba(189, 189, 189,0.05) 100%),linear-gradient(313deg, rgba(249, 249, 249,0.05) 0%, rgba(249, 249, 249,0.05) 50%,rgba(111, 111, 111,0.05) 50%, rgba(111, 111, 111,0.05) 100%),linear-gradient(335deg, rgba(231, 231, 231,0.05) 0%, rgba(231, 231, 231,0.05) 50%,rgba(220, 220, 220,0.05) 50%, rgba(220, 220, 220,0.05) 100%),linear-gradient(381deg, rgba(80, 80, 80,0.05) 0%, rgba(80, 80, 80,0.05) 50%,rgba(243, 243, 243,0.05) 50%, rgba(243, 243, 243,0.05) 100%),radial-gradient(circle at center center, hsl(107,19%,100%),hsl(107,19%,100%));    background-repeat: no-repeat; */
-    z-index: -4;
-    display: flex;
-    flex-direction: column;
-align-items: center;
-}
-
-.radiel {
-    width: 310px;
-    height: 500px;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    top: -30px;
-}
-
-.paragraph {
-    /* text-align: center; */
-    /* margin-top: 80px; */
- color: #1a112b;
- font-weight: 900;
-}
-
-.background {
-    padding: 15px 0;
-    /* background: #fefefe; */
-    position: relative;
-}
 
 .backgroundColor {
     z-index: -100;
     width: 100%;
-height: 100%;
-position: absolute;
-background-image: url("../../images/canvas.jpg");
-background-size: cover;
+    height: 100%;
+    position: absolute;
+    background-image: url("../../images/canvas.jpg");
     top: 0;
     left: 0;
 }
@@ -101,5 +32,112 @@ background-size: cover;
 .introBackground {
      position: relative;
      padding-top: 40px;
-     padding-bottom: 40px;
+     padding-bottom: 120px;
+ }
+
+/*================
+zebra painting
+==================*/
+
+.zebraPainting {
+    z-index: -2;
+    height:399px;
+    width: 290px;
+    position: absolute;
+    top: 19px;
+    right: 21px;
+    transition: 2s linear all;
+}
+
+.zebraPaintingGif {
+    position: absolute;
+    height:399px;
+    width: 290px;
+    top: 19px;
+    right: 21px;
+    transition: 2s linear all;
+}
+
+.zebraWrapper {
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: -2;
+    height: 440px;
+    background-color: #cacaca;
+    border: 4px solid orange;
+    width: 335px;
+}
+
+.zebraWrapper::before {
+    content: "";
+    position: absolute;
+    border: 4px solid #81a6c1;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+}
+
+.zebraWrapper::after {
+    content: "";
+    position: absolute;
+    border: 8px solid #36444e;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+}
+
+.dissapear{
+    /* visibility: hidden;
+    opacity: 0; */
+    transition: visibility 0s, opacity 0.5s linear;
+    /* display: none;
+    transition: 2s linear all; */
+}
+
+/*================
+div containing paragraph
+  0.1: paragraph styles
+  0.2: button styles
+==================*/
+
+.textBox {
+    width: 390px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textBox > h2 {
+    text-align: left;
+    width: 100%;
+}
+
+.paragraph {
+     color: #1a112b;
+     font-weight: 900;
+     padding: 25px 0;
+     text-align: left;
+}
+
+ .button {
+     cursor: pointer;
+     color: whitesmoke;
+     font-weight: 900;
+     background-color: rgb(0, 0, 0);
+     width: 100%;
+     height: 40px;
+     border-radius: 10px;
+     text-decoration: none;
+     text-align: center;
+     padding: 10px;
  }

@@ -34,7 +34,7 @@ const Gallery = () => {
   `)
   return (
     <div className="background" id="gallery">
-      <h1 className="title">GALLERY</h1>
+      <h1 className="galleryTitle">GALLERY</h1>
       <div className="imageGallery">
         {data.allFile.edges.map((image, i) => (
           < Img

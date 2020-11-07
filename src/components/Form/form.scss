@@ -1,5 +1,5 @@
 .backgroundForm {
-    background-color: #cacaca;
+  background-image: url("../../images/canvas.jpg");
     height: 800px;
 }
 
@@ -72,10 +72,10 @@ transform: translate(-50%, -50%);
   width: 300px;
 }
 
-.title {
-    padding: 50px;
-    text-align: center;
-}
+// .title {
+//     padding: 50px;
+//     text-align: center;
+// }
 
 $fuschia: #ff0081;
 $button-bg: $fuschia;
@@ -194,4 +194,9 @@ body{
     background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
   background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
   }
+}
+
+.tropicalPainting {
+  width: 400px;
+  height: 500px;
 }
