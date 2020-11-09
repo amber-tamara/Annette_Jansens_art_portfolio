@@ -2,7 +2,7 @@ import React from "react"
 import Bio from '../About/about.module.css'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import stroke from "../../images/intro/pinkStroke.svg"
+import stroke from "../../images/intro/blackstring.png"
 
 const About = () => {
   const data = useStaticQuery(graphql`{

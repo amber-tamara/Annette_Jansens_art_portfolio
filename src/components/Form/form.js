@@ -8,7 +8,8 @@ import Recaptcha from "react-recaptcha";
 import axios from "axios";
 // import Img from "gatsby-image"
 import FormSvg from "./animation";
-import painting from "../../images/paintings/d.jpg"
+import painting from "../../images/giraff.png"
+import stroke from "../../images/intro/blackString.png"
 
 const Form = () => {
     const [animate, setAnimate] = useState(false);
@@ -92,14 +93,15 @@ const Form = () => {
     return (
         <div className="backgroundForm" id="form">
             <div className="form-box">
-                <div className="title">
-                    <h1>CONTACT ME</h1>
-                    <p>Interested in a painting or want to collab?
-                    Drop me a message
-                    </p>
-                </div>
                 <div className={`form-wrapper ${none ? "dissapear" : ""}`}>
                     <form className="form" onSubmit={handleOnSubmit}>
+                        <div className="titleWrapper">
+                            <h1>CONTACT ME</h1>
+                            <img src={stroke} className="underlineStrokeForm"></img>
+                            <p>Interested in a painting or want to collab?
+                            Drop me a message...
+                      </p>
+                        </div>
                         <div className="box">
                             <label for="exampleInputEmail1"
                                 required="required">
@@ -152,6 +154,7 @@ const Form = () => {
                     </form>
                     {/* <FormSvg></FormSvg> */}
                     <img src={painting} className="tropicalPainting"></img>
+
                 </div>
                 <div className="messageBox">
                     <div className="message">

@@ -29,7 +29,7 @@ typography
     }
 
 .galleryTitle {
-    background: -webkit-linear-gradient(45deg, #e6b30c, #9e7901 80%);
+    background: -webkit-linear-gradient(45deg, #e0e0e0, #c7c7c7 80%);
         /* background: linear-gradient(to right, rgb(243, 136, 37), rgb(231, 137, 223) 50%, rgb(50, 131, 197) 50%); */
         background-clip: text;
         -webkit-background-clip: text;
@@ -49,17 +49,32 @@ typography
     right: -0.5rem;
     height: 0.75rem;
     z-index: 10;
-    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg");
     background-repeat: no-repeat;
 
     } 
+
+    .underlineStroke {
+        width: 300px;
+        position: absolute;
+        z-index: 10;
+        left: 0.1rem;
+    }
+
+    .titleBox {
+        width: 280px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        position: relative;
+        padding: 80px;
+    }
 
 /*================
 backgroundstyles
 ==================*/
 
 .background {
-    background-image: url("../../images/canvas.jpg");
+    background: linear-gradient(to top, #080808, #181717); 
     padding-bottom: 100px;
 }
 
@@ -68,9 +83,8 @@ gallery display styles
 ==================*/
 
 .imageGallery {
-    max-width: 1040px;
+    max-width: 960px;
     margin: auto;
-    padding-top: 50px; 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);

@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import Aos from "aos";
 import "aos/dist/aos.css"
 import { useEffect } from "react"
+import stroke from "../../images/intro/whiteString.png"
 
 const Gallery = () => {
   useEffect(() => {
@@ -34,7 +35,10 @@ const Gallery = () => {
   `)
   return (
     <div className="background" id="gallery">
-      <h1 className="galleryTitle">GALLERY</h1>
+      <div className="titleBox">
+        <h1 className="galleryTitle">GALLERY</h1>
+        <img src={stroke} className="underlineStroke"></img>
+      </div>
       <div className="imageGallery">
         {data.allFile.edges.map((image, i) => (
           < Img

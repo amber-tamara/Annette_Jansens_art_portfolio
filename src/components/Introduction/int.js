@@ -24,13 +24,12 @@ const Introduction = () => {
             </div>
             <div className="wrapper">
                 <div className="textBox">
-                    <h2>Welcome...</h2>
                     <p className="paragraph">Contrary to popular belief, Lorem Ipsum is not simply random text.
                     It has roots in a piece of classical Latin literature from 45 BC,
                         making it over 2000 years old. Richard McClintock</p>
                     <a onClick={clickHandler} className={` button glow-on-hover butto ${animate ? "testt" : ""}`} href="#gallery">GALLERY</a>
                 </div>
-                <div className="zebraWrapper"> </div>
+                <div className="backgroundFrame"> </div>
                 <img src={zebra} className="zebraPainting" />
                 <img src={finishedZebra} className={` ${open ? "zebraPaintingGif" : "dissapear"}`} />
             </div>

@@ -3,13 +3,14 @@ background styles
 ===================*/
 
 .background {
-    background-image: url("../../images/canvas.jpg");
+    background: linear-gradient(to bottom, #080808, #181717); 
 }
 
 .clip {
-    background-color: #D0A3BF;
+    background-color: #C79898;
     clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
     padding-top: 100px;
+    /* margin-bottom: -100px; */
 }
 
 /*==================
@@ -20,7 +21,7 @@ content styles
     flex-wrap: wrap;
     justify-content: space-evenly;
     display: flex;
-    max-width: 1040px;
+    max-width: 960px;
     justify-content: space-between;
     margin: auto;
 }
@@ -43,23 +44,24 @@ title styles
     align-content: center;
 }
 
-.underlineStroke {
-    width: 290px;
-    position: absolute;
-    bottom: -2.4rem;
-    z-index: 10;
-}
-
 .title {
     position: relative;
-    font-size: 50px;
-    background: -webkit-linear-gradient(45deg, #e60cdb, #9e0162 80%);
+    font-size: 40px;
+    background: -webkit-linear-gradient(45deg, #181717, #0f0b0e 80%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
     font-weight: 1000;
+}
+
+.underlineStroke {
+    width: 285px;
+    position: absolute;
+    bottom: -1.6rem;
+    z-index: 10;
+    left: -1.4rem
 }
 
 /*==================
@@ -85,10 +87,10 @@ photo of artist styles
     z-index: -2;
     height: 440px;
     background-color: #cacaca;
-    border: 4px solid #8F3985;
+    border: 19px solid #030203;
 }
 
-.photo::before {
+/* .photo::before {
     content: "";
     position: absolute;
     border: 15px solid #35605A;
@@ -97,7 +99,7 @@ photo of artist styles
     right: -12px;
     bottom: -12px;
     z-index: 100;
-}
+} */
 
 /*==================
 paragraph styles
@@ -105,6 +107,6 @@ paragraph styles
 
 .paragraph {
     height: 250px;
-    width: 590px;
+    width: 500px;
     margin: auto 0;
 }
