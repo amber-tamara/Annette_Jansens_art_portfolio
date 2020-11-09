@@ -7,9 +7,9 @@ import { useState } from 'react';
 import Recaptcha from "react-recaptcha";
 import axios from "axios";
 // import Img from "gatsby-image"
-import FormSvg from "./animation";
+// import FormSvg from "./animation";
 import painting from "../../images/giraff.png"
-import stroke from "../../images/intro/blackString.png"
+import formTitleUnderline from "../../images/intro/blackString.png"
 
 const Form = () => {
     const [animate, setAnimate] = useState(false);
@@ -97,13 +97,13 @@ const Form = () => {
                     <form className="form" onSubmit={handleOnSubmit}>
                         <div className="titleWrapper">
                             <h1>CONTACT ME</h1>
-                            <img src={stroke} className="underlineStrokeForm"></img>
+                            <img src={formTitleUnderline} className="underlineStrokeForm" alt="underline"></img>
                             <p>Interested in a painting or want to collab?
                             Drop me a message...
                       </p>
                         </div>
                         <div className="box">
-                            <label for="exampleInputEmail1"
+                            <label htmlFor="name"
                                 required="required">
                                 Name</label>
                             <input
@@ -115,7 +115,7 @@ const Form = () => {
                             />
                         </div>
                         <div className="box">
-                            <label for="exampleInputName">
+                            <label htmlFor="email">
                                 Email</label>
                             <input
                                 className="text"
@@ -126,7 +126,7 @@ const Form = () => {
                             />
                         </div>
                         <div className="box">
-                            <label for="exampleInputMessage">Message</label>
+                            <label htmlFor="message">Message</label>
                             <textarea
                                 className="text"
                                 name="message"
@@ -153,7 +153,7 @@ const Form = () => {
                   </button>
                     </form>
                     {/* <FormSvg></FormSvg> */}
-                    <img src={painting} className="tropicalPainting"></img>
+                    <img src={painting} className="tropicalPainting" alt="giraffe"></img>
 
                 </div>
                 <div className="messageBox">

@@ -9,8 +9,8 @@ const Footer = () => {
             <div className={Foot.svgWrapper}>
                 <p>Copyright ©2020 Annette's Art. Designed by Amber Jansen</p>
                 <div class={Foot.iconWrapper}>
-                    <img src={Icon} className={Foot.svg} />
-                    <img src={SecondIcon} className={Foot.svg} />
+                    <img src={Icon} className={Foot.svg} alt="facebook Icons" />
+                    <img src={SecondIcon} className={Foot.svg} alt="instagram Icons" />
                 </div>
             </div>
         </div>

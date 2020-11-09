@@ -2,7 +2,7 @@ import React from "react"
 import Bio from '../About/about.module.css'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import stroke from "../../images/intro/blackstring.png"
+import aboutTitleUnderline from "../../images/intro/blackstring.png"
 
 const About = () => {
   const data = useStaticQuery(graphql`{
@@ -21,11 +21,11 @@ const About = () => {
     <div className={Bio.background} id="about">
       <div className={Bio.clip}>
         <div className={Bio.contentWrapper}>
-          <Img fluid={data.file.childImageSharp.fluid} fadeIn className={Bio.photo}></Img>
+          <Img fluid={data.file.childImageSharp.fluid} fadeIn className={Bio.photo} alt="women"></Img>
           <div>
             <div className={Bio.titleBox}>
               <h1 className={Bio.title}>ABOUT ME</h1>
-              <img src={stroke} className={Bio.underlineStroke}></img>
+              <img src={aboutTitleUnderline} className={Bio.underlineStroke} alt="underline"></img>
             </div>
             <p className={Bio.paragraph}>Lotta Nieminen Studio is a graphic design, art direction
             and illustration studio creating holistic visual solutions

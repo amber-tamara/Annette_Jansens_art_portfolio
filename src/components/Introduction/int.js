@@ -2,7 +2,7 @@ import '../Introduction/introduction.css'
 import finishedZebra from "../../images/finishedZebra.gif"
 // import drawing from "../../images/intro/drawing.png"
 import zebra from "../../images/intro/screnZeb.png"
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 // import backgroundPattern from "../../images/intro/drawing_cloudy.png"
 
 const Introduction = () => {
@@ -30,8 +30,8 @@ const Introduction = () => {
                     <a onClick={clickHandler} className={` button glow-on-hover butto ${animate ? "testt" : ""}`} href="#gallery">GALLERY</a>
                 </div>
                 <div className="backgroundFrame"> </div>
-                <img src={zebra} className="zebraPainting" />
-                <img src={finishedZebra} className={` ${open ? "zebraPaintingGif" : "dissapear"}`} />
+                <img src={zebra} className="zebraPainting" alt="zebra painting" />
+                <img src={finishedZebra} className={` ${open ? "zebraPaintingGif" : "dissapear"}`} alt="gif" />
             </div>
         </div>
     )
