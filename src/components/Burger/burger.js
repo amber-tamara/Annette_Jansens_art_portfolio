@@ -14,6 +14,7 @@ justify-content: space-around;
 flex-flow: column nowrap;
 z-index: 10;
 display: none;
+cursor: pointer;
 
 @media (max-width: 1027px) {
     display: flex;
@@ -24,7 +25,7 @@ display: none;
 div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => open ? '#ccc' : '#333'};
+    background-color: ${({ open }) => open ? '#ccc' : '#F5F5F5'};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;

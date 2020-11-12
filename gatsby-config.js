@@ -1,6 +1,7 @@
 const path = require(`path`)
 
 module.exports = {
+  pathPrefix: "/Annette_Jansens_art_portfolio",
   siteMetadata: {
     title: `Annette's Art`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
@@ -32,13 +33,6 @@ module.exports = {
       options: {
         name: `images`,
         path: path.join(__dirname, `src`, `images`),
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `carousel`,
-        path: path.join(__dirname, `src`, `images`, `carousel`),
       },
     },
     `gatsby-transformer-sharp`,

@@ -8,8 +8,10 @@ import Recaptcha from "react-recaptcha";
 import axios from "axios";
 // import Img from "gatsby-image"
 // import FormSvg from "./animation";
-import painting from "../../images/giraff.png"
-import formTitleUnderline from "../../images/intro/blackString.png"
+import painting from "../../images/footer/giraff.png"
+import blueButterly from "../../images/footer/blueButterfly.png"
+import multiColorButterly from "../../images/footer/mulitColorButterfly.png"
+import formTitleUnderline from "../../images/intro/blackstring.png"
 
 const Form = () => {
     const [animate, setAnimate] = useState(false);
@@ -96,9 +98,9 @@ const Form = () => {
                 <div className={`form-wrapper ${none ? "dissapear" : ""}`}>
                     <form className="form" onSubmit={handleOnSubmit}>
                         <div className="titleWrapper">
-                            <h1>CONTACT ME</h1>
+                            <h2 className="contactTitle">CONTACT ME</h2>
                             <img src={formTitleUnderline} className="underlineStrokeForm" alt="underline"></img>
-                            <p>Interested in a painting or want to collab?
+                            <p className="contactParagraph">Interested in a painting or want to collab?
                             Drop me a message...
                       </p>
                         </div>
@@ -153,6 +155,9 @@ const Form = () => {
                   </button>
                     </form>
                     {/* <FormSvg></FormSvg> */}
+
+                    <img src={blueButterly} alt="butterfly" className="firstButterfly"></img>
+                    <img src={multiColorButterly} alt="butterfly" className="secondButterfly"></img>
                     <img src={painting} className="tropicalPainting" alt="giraffe"></img>
 
                 </div>
@@ -164,7 +169,7 @@ const Form = () => {
                             </p>
                         )}
                     </div>
-                    <img src={require("../../images/splat.jpg")} alt="Cat" className={` ${toggled ? "appear" : "dissapear"}`} />
+                    {/* <img src={require("../../images/splat.jpg")} alt="Cat" className={` ${toggled ? "appear" : "dissapear"}`} /> */}
                 </div>
             </div>
         </div>

@@ -12,8 +12,8 @@ const StyledBurger = styled.div`
 width: 2rem;
 height: 2rem;
 position: absolute;
-top: 15px;
-right: 40px;
+top: 11px;
+right: 20px;
 display: flex;
 justify-content: flex-end;;
 flex-flow: column nowrap;
@@ -29,7 +29,7 @@ display: none;
 div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => open ? '#ccc' : '#333'};
+    background-color: ${({ open }) => open ? '#ccc' : '#F5F5F5'};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;

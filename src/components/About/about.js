@@ -24,7 +24,7 @@ const About = () => {
           <Img fluid={data.file.childImageSharp.fluid} fadeIn className={Bio.photo} alt="women"></Img>
           <div>
             <div className={Bio.titleBox}>
-              <h1 className={Bio.title}>ABOUT ME</h1>
+              <h2 className={Bio.title}>ABOUT ME</h2>
               <img src={aboutTitleUnderline} className={Bio.underlineStroke} alt="underline"></img>
             </div>
             <p className={Bio.paragraph}>Lotta Nieminen Studio is a graphic design, art direction
@@ -36,11 +36,7 @@ const About = () => {
             implementations. Originally from Finland, Lotta Nieminen studied
             graphic design and illustration at the University of Art and Design
             Helsinki and the Rhode Island School of Design, before founding her
-            New York-based studio in 2012. She has been nominated for Forbes
-            magazine’s annual 30 Under 30 list, the Art Directors Club Young
-            Guns award and Print magazine’s New Visual Artist, and has given
-            talks at conferences and educational institutions across the United
-                States and Europe.</p>
+            New York-based studio in 2012.</p>
           </div>
         </div>
       </div >

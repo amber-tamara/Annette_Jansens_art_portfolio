@@ -16,20 +16,12 @@ flex-wrap: wrap;
 max-width: 960px;
 margin: 0 auto;
 justify-content: space-between;
-padding-top: 150px;
-margin-top: -100px;
+padding-top: 170px;
+margin-top: -137px;
 }
 
 .recaptcha {
   margin-bottom: 21px;
-}
-
-@media (max-width: 770px) { 
-  .backgroundForm { height: 1300px;
-  } 
-  .form {
-    margin-left: 30px;
-  }
 }
 
 .dissapear {
@@ -70,11 +62,12 @@ transform: translate(-50%, -50%);
 }
 
 .titleWrapper {
+  width: 100%;
   padding-bottom: 30px;
   position: relative;
 }
 
-.titleWrapper > h1 {
+  .contactTitle{
   font-size: 40px;
     position: relative;
     font-size: 40px;
@@ -87,7 +80,7 @@ transform: translate(-50%, -50%);
     font-weight: 1000;
 }
 
-.titleWrapper > p {
+.contactParagraph {
   margin-top: 20px;
 }
 
@@ -268,4 +261,105 @@ html {
   background-color: #C79898;
   position: relative;
   padding: 80px;
+}
+
+.firstButterfly {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  width: 140px;
+  height: 140px;
+  transform: rotate(-20deg);
+}
+
+.secondButterfly {
+  position: absolute;
+  bottom: 50px;
+  left: 40%;
+  width: 150px;
+  height: 150px;
+  transform: rotate(20deg);
+}
+
+@media(max-width: 400px) {
+  .form-wrapper {
+  // margin-top: -125px;
+  }
+  .tropicalPainting {
+    height: 300px;
+    margin-left: 90px;
+  }
+  .secondButterfly {
+    bottom: 20%;
+    left: 5%;
+    width: 80px;
+    height: 80px;
+  }
+  .firstButterfly {
+    top: 950px;
+    left: 5px;
+    width: 70px;
+    height: 70px;
+  }
+  .footer {
+    flex-wrap: wrap;
+  }
+  .svgWrapper {
+    margin: 0 auto;
+    margin-bottom: 3px;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+}
+
+@media(max-width: 738px){
+.firstButterfly {
+  right: 10%;
+  bottom: 0;
+  width: 80px;
+  height: 80px;
+}
+.secondButterfly{
+  left: 0; 
+  width: 90px;
+  height: 90px;
+}
+// .tropicalPainting {
+//   height: 320px;
+// }
+}
+
+@media(min-width: 400px) and (max-width: 624px){
+  .tropicalPainting {
+  height: 430px;
+  }
+}
+
+@media(max-width: 960px){
+  .contactTitle {
+    text-align: center;
+}
+.underlineStrokeForm {
+  left: -0.7rem;
+  bottom: 20px;
+}
+  .form-wrapper {
+    justify-content: center;
+  max-width: 700px;
+  }
+  .firstButterfly {
+    right: 20px;
+  }
+  .secondButterfly {
+    left: 0;
+  }
+  .contactParagraph{
+    text-align: center;
+  }
+}
+
+@media(min-width: 961px){ 
+  .firstButterfly {
+  bottom: 450px;
+  }
 }

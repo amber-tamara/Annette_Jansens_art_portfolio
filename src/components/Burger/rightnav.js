@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 import "../Burger/burger.css"
-import Icon from "../../assets/facebook.svg"
-import SecondIcon from "../../assets/instagram.svg"
+import Icon from "../../images/face.png"
+import SecondIcon from "../../images/insta.png"
 
 const Ul = styled.ul` 
  list-style: none;
@@ -14,15 +14,22 @@ const Ul = styled.ul`
    padding: 18px 10px;
  }
 
+ @media (max-width: 510px){
+   width: 100%
+ }
+
+ @media (min-width: 510px){
+   width: 300px;
+ }
+
 @media (max-width: 1027px) {
   flex-flow: column nowrap;
-  background-color: #a7a6a6;
+  background-color: #181717;
   position: fixed;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
   top: 0;
   right: 0;
-  height: 60vh;
-  width: 300px;
+  height: 400px;
   padding-top: 3.5rem;
   transition: transform 0.3s ease-in-out;
   
@@ -54,9 +61,9 @@ const RightNav = ({ open }) => {
       <li className="gallery-burger"><a href="#gallery">GALLERY</a></li>
       <li><a href="#about">ABOUT</a></li>
       <li><a href="#form">CONTACT</a></li>
-      <span className="svgWrapper">
-        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc" aria-label="facebook" htmlFor="facebook"><Icon className="svg" /></a>
-        <a href="https://www.instagram.com/annettes_arts/" target="_blanc" aria-label="instagram" htmlFor="instagram"><SecondIcon className="svg" /></a>
+      <span className="navSvgWrapper">
+        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blank"><img src={Icon} className="svg" alt="facebook Icons" /></a>
+        <a href="https://www.instagram.com/annettes_arts/ " target="_blank"><img src={SecondIcon} className="svg" alt="instagram Icons" /></a>
       </span>
     </Ul >
   )

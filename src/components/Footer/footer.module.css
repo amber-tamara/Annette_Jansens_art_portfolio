@@ -43,3 +43,28 @@
       color: white;
       z-index: 10;
   }
+
+  @media(max-width: 960px){
+    .svgWrapper {
+    flex-wrap: wrap;
+    }
+    .svgWrapper > div {
+        /* margin: 0 auto; */
+        padding: 0 15px 0 5px;
+        max-width: 90px;
+    }
+    .svgWrapper > p {
+    padding-left: 15px;
+    }
+  }
+
+  @media (max-width: 590px){
+    .svgWrapper > p {
+        margin: 0 auto;
+        padding: 2px;
+    }
+      .svgWrapper > div {
+        margin: 0 auto;
+        padding: 5px;
+      }
+  }

@@ -4,13 +4,17 @@ background styles
 
 .background {
     background: linear-gradient(to bottom, #080808, #181717); 
+    padding-top: 90px;
 }
 
 .clip {
     background-color: #C79898;
-    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+    /* -webkit-clip-path: polygon(0px 20%, calc(100% + 1px) 0px, calc(100% + 1px) 100%, 0px 100%); */
+    -webkit-clip-path: polygon(0 10%, calc(100% + 1px) 0px, calc(100% + 1px) 90%, 0% 100%);
     padding-top: 100px;
-    /* margin-bottom: -100px; */
+    transform:scaleZ(1);
+    overflow: hidden;
+    margin-bottom: -100px;
 }
 
 /*==================
@@ -32,7 +36,7 @@ title styles
 
 .titleBox {
     height: 110px;
-    width: 300px;
+    /* width: 300px; */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -72,7 +76,7 @@ photo of artist styles
     display: inline-flex;
     height: 400px;
     width: 400px;
-    margin-bottom: 70px;
+    margin-bottom: 80px;
 }
 
 .photo {
@@ -85,9 +89,7 @@ photo of artist styles
     0 100px 80px rgba(0, 0, 0, 0.12);
     position: relative;
     z-index: -2;
-    height: 440px;
     background-color: #cacaca;
-    border: 19px solid #030203;
 }
 
 /* .photo::before {
@@ -107,6 +109,69 @@ paragraph styles
 
 .paragraph {
     height: 250px;
-    width: 500px;
+    /* width: 500px; */
     margin: auto 0;
+}
+
+@media(min-width: 500px){
+    .paragraph {
+        width: 500px;
+    }
+}
+
+@media(max-width: 320px){
+.clip {
+    padding-top: 200px; 
+    padding-bottom: 200px;
+}
+.titleBox {
+    /* width: 319px; */
+    align-items: center;
+}
+.underlineStroke {
+    left: 0.8rem;
+    bottom: -25px;
+}
+.paragraph {
+    text-align: center;
+    /* margin: 0 auto; */
+}
+.photo {
+    margin: 0;
+}
+.contentWrapper {
+    padding-bottom: 100px;
+ }
+}
+
+@media(min-width: 320px) and (max-width: 960px){
+    .contentWrapper {
+        max-width: 700px;
+        justify-content: center;
+        padding-bottom: 120px;
+    padding-top: 90px;
+    }
+    .photo {
+        margin: 0;
+    }
+    .titleBox {
+        width: 250px;
+    margin: 0 auto;
+    }
+    .title, .paragraph {
+        text-align: center;
+    }
+    .underlineStroke {
+        bottom: -1.6rem;
+        left: -0.6rem;
+    }
+}
+
+
+
+@media(min-width: 320px) and (max-width: 400px ){
+    .contentWrapper {
+       padding-bottom: 200px;
+       padding-top: 110px
+    }
 }
