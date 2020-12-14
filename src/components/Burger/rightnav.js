@@ -62,8 +62,8 @@ const RightNav = ({ open }) => {
       <li><a href="#about">ABOUT</a></li>
       <li><a href="#form">CONTACT</a></li>
       <span className="navSvgWrapper">
-        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blank"><img src={Icon} className="svg" alt="facebook Icons" /></a>
-        <a href="https://www.instagram.com/annettes_arts/ " target="_blank"><img src={SecondIcon} className="svg" alt="instagram Icons" /></a>
+        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blank" rel="noreferrer"><img src={Icon} className="svg" alt="facebook Icons" /></a>
+        <a href="https://www.instagram.com/annettes_arts/ " target="_blank" rel="noreferrer"><img src={SecondIcon} className="svg" alt="instagram Icons" /></a>
       </span>
     </Ul >
   )

@@ -53,8 +53,8 @@ const Header = ({ siteTitle }) => {
   return (
     <header className={header.header}>
       {/* <div className={header.svgWrapper}>
-        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc"><Icon className={header.svg} /> </a>
-        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc"><SecondIcon className={header.secondSvg} /></a>
+        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc" rel="noreferrer"><Icon className={header.svg} /> </a>
+        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc" rel="noreferrer"><SecondIcon className={header.secondSvg} /></a>
       </div> */}
       <div className={header.wrapper}>
         <div className={header.title}></div>

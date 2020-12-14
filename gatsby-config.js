@@ -11,7 +11,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-anchor-links`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-recaptcha`,
     {
       resolve: `gatsby-plugin-recaptcha`,
@@ -19,6 +18,12 @@ module.exports = {
         async: false,
         defer: false,
         args: `?onload=onloadCallback&render=explicit`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require('sass')
       },
     },
     {
