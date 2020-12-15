@@ -1,22 +1,17 @@
 import React from "react"
 import "../Form/form.scss"
-// import FormSvg from "../Form/animation"
-// import Button from "../Button/button.js"
 import "../Button/button.scss"
 import { useState } from 'react';
 import Recaptcha from "react-recaptcha";
 import axios from "axios";
-// import Img from "gatsby-image"
-// import FormSvg from "./animation";
-import painting from "../../images/footer/giraff.png"
-import blueButterly from "../../images/footer/blueButterfly.png"
-import multiColorButterly from "../../images/footer/mulitColorButterfly.png"
 import formTitleUnderline from "../../images/intro/blackstring.png"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
+
 
 const Form = () => {
     const [animate, setAnimate] = useState(false);
     const [none, setNone] = useState(false);
-    const [toggled, setToggled] = useState(false);
     const [click, setClick] = useState(false)
     const [serverState, setServerState] = useState({
         submitting: false,
@@ -63,7 +58,6 @@ const Form = () => {
                     handleServerResponse(true, "Thanks!", form)
                     setClick(false)
                     setNone(true)
-                    setToggled(true)
                 }
             })
             .then(r => {
@@ -91,6 +85,24 @@ const Form = () => {
             console.log(click)
         }
     }
+
+
+    const data = useStaticQuery(graphql`
+    {
+        allFile(filter: {sourceInstanceName: {eq: "footer"}}, sort: {order: ASC, fields: name}) {
+            edges {
+              node {
+                id
+                childImageSharp {
+                  fluid {
+                    srcSet
+                  }
+                }
+              }
+            }
+          }
+        }
+   `)
 
     return (
         <div className="backgroundForm" id="form">
@@ -155,11 +167,18 @@ const Form = () => {
                   </button>
                     </form>
                     {/* <FormSvg></FormSvg> */}
+                    <div>
+                        {data.allFile.edges.map((image, i) => (
+                            < Img
+                                style={{ position: "absolute" }}
+                                className={"footerImage-" + i}
+                                key={image.node.id}
+                                fluid={image.node.childImageSharp.fluid}
+                                alt={image.node.name}
+                            />
 
-                    <img src={blueButterly} alt="butterfly" className="firstButterfly"></img>
-                    <img src={multiColorButterly} alt="butterfly" className="secondButterfly"></img>
-                    <img src={painting} className="tropicalPainting" alt="giraffe"></img>
-
+                        ))}
+                    </div>
                 </div>
                 <div className="messageBox">
                     <div className="message">
@@ -169,7 +188,6 @@ const Form = () => {
                             </p>
                         )}
                     </div>
-                    {/* <img src={require("../../images/splat.jpg")} alt="Cat" className={` ${toggled ? "appear" : "dissapear"}`} /> */}
                 </div>
             </div>
         </div>

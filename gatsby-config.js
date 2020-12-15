@@ -4,9 +4,10 @@ module.exports = {
   pathPrefix: "/Annette_Jansens_art_portfolio",
   siteMetadata: {
     title: `Annette's Art`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Explore Art`,
+    author: `Amber Jansen`,
   },
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
@@ -31,6 +32,13 @@ module.exports = {
       options: {
         name: `paintings`,
         path: path.join(__dirname, `src`, `images`, `paintings`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `footer`,
+        path: path.join(__dirname, `src`, `images`, `footer`),
       },
     },
     {

@@ -1,16 +1,8 @@
 import '../Introduction/introduction.css'
-import finishedZebra from "../../images/finishedZebra.gif"
-// import drawing from "../../images/intro/drawing.png"
-import zebra from "../../images/intro/screnZeb.png"
+import finishedZebra from "../../images/zits.mp4"
 import React, { useState } from 'react';
-// import backgroundPattern from "../../images/intro/drawing_cloudy.png"
 
 const Introduction = () => {
-    const [open, isOpen] = useState(true)
-    setTimeout(() => {
-        isOpen(false)
-    }, 10100);
-
     const [animate, setAnimate] = useState(false);
 
 
@@ -29,9 +21,10 @@ const Introduction = () => {
                     <a onClick={clickHandler} className={` button glow-on-hover butto ${animate ? "testt" : ""}`} href="#gallery">GALLERY</a>
                 </div>
                 <div className="pictureWrapper">
-                    <div className="backgroundFrame"> </div>
-                    <img src={zebra} className="zebraPainting" alt="zebra painting" />
-                    <img src={finishedZebra} className={` ${open ? "zebraPaintingGif" : "dissapear"}`} alt="gif" />
+                    <div className="backgroundFrame"></div>
+                    <video src={finishedZebra} width="320px" height="240" autoPlay muted
+                        className="zebraPaintingGif">
+                    </video>
                 </div>
             </div>
         </div>

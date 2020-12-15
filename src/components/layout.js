@@ -14,7 +14,8 @@ import About from "../components/About/about"
 import Gallery from "../components/Gallery/gallery"
 import Form from "../components/Form/form"
 import Footer from "../components/Footer/footer"
-import Banana from "../components/Introduction/int"
+import Introduction from "../components/Introduction/int"
+import { Helmet } from "react-helmet"
 // import Burger from '../components/Burger/burger'
 
 const Layout = ({ children }) => {
@@ -30,8 +31,14 @@ const Layout = ({ children }) => {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Annette's Art</title>
+        <link rel="canonical" href="http://localhost:8000/" />
+        <html lang="en" />
+      </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Banana />
+      <Introduction />
       <Gallery />
       <About></About>
       <Form />

@@ -2,11 +2,11 @@ import PropTypes from "prop-types"
 import React from "react"
 import { useState } from 'react';
 import header from "./header.module.scss"
-// import Icon from "../../assets/facebook.svg"
-// import SecondIcon from "../../assets/instagram.svg"
 import styled from 'styled-components'
 import RightNav from '../Burger/rightnav'
-// import Splat from "../../assets/splat.svg"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
+
 
 const StyledBurger = styled.div`
 width: 2rem;
@@ -41,30 +41,34 @@ div {
 &:nth-child(2) {
     transform: ${({ open }) => open ? 'translateX(100%)' : 'translateX(0)'};
     opacity: ${({ open }) => open ? 0 : 1}
-}
-&:nth-child(3) {
+  }
+  &:nth-child(3) {
     transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+  }
 }
-}
- `
+`
 
 const Header = ({ siteTitle }) => {
   const [open, setOpen] = useState(false)
+
+  const data = useStaticQuery(graphql`{
+    file(relativePath: {eq: "title.png"}) {
+      id
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+       srcSet
+        }
+      }
+    }
+  }`)
   return (
     <header className={header.header}>
-      {/* <div className={header.svgWrapper}>
-        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc" rel="noreferrer"><Icon className={header.svg} /> </a>
-        <a href="https://www.facebook.com/profile.php?id=100008144649274" target="_blanc" rel="noreferrer"><SecondIcon className={header.secondSvg} /></a>
-      </div> */}
       <div className={header.wrapper}>
-        <div className={header.title}></div>
+        <Img fluid={data.file.childImageSharp.fluid} fadeIn className={header.title} alt="title"></Img>
         <li className={header.nav}>
           <ul><a href="#gallery" className={`${header.navLink} ${header.orange}`}>GALLERY</a></ul>
           <ul><a href="#about" className={`${header.navLink} ${header.pink}`}>ABOUT</a></ul>
           <ul><a href="#form" className={`${header.navLink} ${header.blue}`}>CONTACT</a></ul>
-          {/* <ul><a className={header.navLink}>GALLERY</a></ul>
-          <ul><a className={header.navLink} href="#about">ABOUT</a></ul>
-          <ul className={header.navList}><a className={header.navLink} href="#form">CONTACT</a></ul> */}
         </li>
         <StyledBurger open={open} onClick={() => setOpen(!open)}>
           <div></div>

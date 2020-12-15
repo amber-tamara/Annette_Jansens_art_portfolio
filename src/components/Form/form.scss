@@ -263,7 +263,7 @@ html {
   padding: 80px;
 }
 
-.firstButterfly {
+.footerImage-2 {
   position: absolute;
   bottom: 0;
   right: 50%;
@@ -272,9 +272,16 @@ html {
   transform: rotate(-20deg);
 }
 
-.secondButterfly {
+.footerImage-1 {
+  width: 440px;
+  height: 600px;
   position: absolute;
-  bottom: 50px;
+  bottom: 0;
+  right: 130px;
+}
+
+.footerImage-0 {
+  position: absolute;
   left: 40%;
   width: 150px;
   height: 150px;
@@ -282,9 +289,6 @@ html {
 }
 
 @media(max-width: 400px) {
-  .form-wrapper {
-  // margin-top: -125px;
-  }
   .tropicalPainting {
     height: 300px;
     margin-left: 90px;

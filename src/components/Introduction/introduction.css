@@ -41,7 +41,7 @@ zebra painting
 ==================*/
 
 .zebraPainting {
-    z-index: 1;
+    z-index: 7;
     height:399px;
     width: 290px;
     position: absolute;
