@@ -7,6 +7,7 @@ import RightNav from '../Burger/rightnav'
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 
+//bello
 
 const StyledBurger = styled.div`
 width: 2rem;
