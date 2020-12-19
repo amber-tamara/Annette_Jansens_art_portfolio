@@ -10,13 +10,9 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header/header"
 import "./layout.css"
-import About from "../components/About/about"
-import Gallery from "../components/Gallery/gallery"
-import Form from "../components/Form/form"
-import Footer from "../components/Footer/footer"
 import Introduction from "../components/Introduction/int"
 import { Helmet } from "react-helmet"
-// import Burger from '../components/Burger/burger'
+import loadable from '@loadable/component'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,8 +25,15 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const Gallery = loadable(() => import('../components/Gallery/gallery'))
+  const Footer = loadable(() => import('../components/Footer/footer'))
+  const About = loadable(() => import('../components/About/about'))
+  const Form = loadable(() => import('../components/Form/form'))
+
+
   return (
     <div>
+
       <Helmet>
         <meta charSet="utf-8" />
         <title>Annette's Art</title>

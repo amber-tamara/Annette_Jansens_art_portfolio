@@ -1,7 +1,7 @@
 import React from "react"
 import Foot from "../Footer/footer.module.css"
-import Icon from "../../images/face.png"
-import SecondIcon from "../../images/insta.png"
+import Icon from "../../images/icons/facebook.png"
+import SecondIcon from "../../images/icons/instagram.png"
 
 const Footer = () => {
     return (

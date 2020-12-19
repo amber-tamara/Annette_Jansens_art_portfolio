@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 import "../Burger/burger.css"
-import Icon from "../../images/face.png"
-import SecondIcon from "../../images/insta.png"
+import Icon from "../../images/icons/facebook.png"
+import SecondIcon from "../../images/icons/instagram.png"
 
 const Ul = styled.ul` 
  list-style: none;
