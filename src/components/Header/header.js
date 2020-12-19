@@ -57,7 +57,7 @@ const Header = ({ siteTitle }) => {
       id
       childImageSharp {
         fluid(maxWidth: 2000) {
-       srcSet
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -65,7 +65,7 @@ const Header = ({ siteTitle }) => {
   return (
     <header className={header.header}>
       <div className={header.wrapper}>
-        <Img fluid={data.file.childImageSharp.fluid} fadeIn className={header.title} alt="title"></Img>
+        <Img fluid={data.file.childImageSharp.fluid} className={header.title} alt="title"></Img>
         <li className={header.nav}>
           <ul><a href="#gallery" className={`${header.navLink} ${header.orange}`}>GALLERY</a></ul>
           <ul><a href="#about" className={`${header.navLink} ${header.pink}`}>ABOUT</a></ul>

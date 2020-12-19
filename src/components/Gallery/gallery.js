@@ -26,6 +26,7 @@ const Gallery = () => {
               srcSetWebp
               originalImg
               originalName
+              ...GatsbyImageSharpFluid
             }
           }
         }
