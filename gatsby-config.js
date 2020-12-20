@@ -13,6 +13,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-recaptcha`,
+    'gatsby-plugin-loadable-components-ssr',
     {
       resolve: `gatsby-plugin-recaptcha`,
       options: {
