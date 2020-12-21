@@ -266,7 +266,7 @@ html {
 .footerImage-2 {
   position: absolute;
   bottom: 0;
-  right: 50%;
+  left: 0px;
   width: 140px;
   height: 140px;
   transform: rotate(-20deg);
@@ -277,66 +277,76 @@ html {
   height: 600px;
   position: absolute;
   bottom: 0;
-  right: 130px;
+  right: 22px;
 }
 
 .footerImage-0 {
+  z-index: 1;
   position: absolute;
-  left: 40%;
+  left: 0px;
   width: 150px;
   height: 150px;
   transform: rotate(20deg);
 }
+.tropicalPainting {
+  height: 664px;
+  width: 611px;
+  position: relative;
+}
+
+@media(max-width: 320px) {
+  .form-wrapper {
+    margin-top: -150px;
+  }
+  .footerImage-1 {
+    width: 256px;
+    height: 320px;
+    right: -24px;
+  }
+  .tropicalPainting {
+    height: 350px;
+}
+.footerImage-2 {
+  height: 70px;
+  width: 70px;
+  left: 20px;
+}
+.footerImage-0 {
+  height: 70px;
+  width: 70px;
+  left: 20px;
+}
+}
 
 @media(max-width: 400px) {
   .tropicalPainting {
-    height: 300px;
-    margin-left: 90px;
-  }
-  .secondButterfly {
-    bottom: 20%;
-    left: 5%;
-    width: 80px;
-    height: 80px;
-  }
-  .firstButterfly {
-    top: 950px;
-    left: 5px;
-    width: 70px;
-    height: 70px;
+    height: 340px;
   }
   .footer {
     flex-wrap: wrap;
   }
-  .svgWrapper {
-    margin: 0 auto;
-    margin-bottom: 3px;
-    padding: 0;
-    flex-wrap: wrap;
-  }
 }
 
-@media(max-width: 738px){
-.firstButterfly {
-  right: 10%;
-  bottom: 0;
-  width: 80px;
-  height: 80px;
-}
-.secondButterfly{
-  left: 0; 
-  width: 90px;
-  height: 90px;
-}
-// .tropicalPainting {
-//   height: 320px;
-// }
-}
-
-@media(min-width: 400px) and (max-width: 624px){
+@media(max-width: 600px) and (min-width: 321px){
   .tropicalPainting {
-  height: 430px;
+    height: 450px;
   }
+  .footerImage-2 {
+    height: 100px;
+    width: 100px;
+    width: 100px;
+    left: 20px; }
+  .footerImage-1 {
+    width: 300px;
+    height: 400px;
+    bottom: 0;
+    right: 0;
+  }
+  .footerImage-0 {
+    left: 50px;
+    height: 100px;
+    width: 100px;
+}
 }
 
 @media(max-width: 960px){
@@ -351,19 +361,23 @@ html {
     justify-content: center;
   max-width: 700px;
   }
-  .firstButterfly {
-    right: 20px;
-  }
-  .secondButterfly {
-    left: 0;
-  }
   .contactParagraph{
     text-align: center;
   }
 }
 
-@media(min-width: 961px){ 
-  .firstButterfly {
-  bottom: 450px;
+@media (max-width: 280px) {
+  .text {
+  width: 269px;
+  }
+  .underlineStrokeForm {
+    left: -0.7rem;
+    width: 299px;
+  }
+  .form {
+    max-width: 270px;
+  }
+  .contactTitle {
+    font-size: 35px;
   }
 }

@@ -57,7 +57,7 @@ const Header = ({ siteTitle }) => {
       id
       childImageSharp {
         fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

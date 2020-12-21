@@ -20,13 +20,7 @@ const Gallery = () => {
           id
           childImageSharp {
             fluid(traceSVG: {blackOnWhite: false}) {
-              base64
-              tracedSVG
-              srcWebp
-              srcSetWebp
-              originalImg
-              originalName
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }

@@ -167,7 +167,7 @@ const Form = () => {
                   </button>
                     </form>
                     {/* <FormSvg></FormSvg> */}
-                    <div>
+                    <div className="tropicalPainting">
                         {data.allFile.edges.map((image, i) => (
                             < Img
                                 style={{ position: "absolute" }}
